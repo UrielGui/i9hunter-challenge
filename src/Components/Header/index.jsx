@@ -1,9 +1,12 @@
 import React from 'react';
+import * as Styled from './Styled';
 
 export default function Header() {
 	return (
 		<>
-			<h1>Header</h1>
+			<Styled.TopBar>
+				<img src='img/logo.svg' alt='' />
+			</Styled.TopBar>
 		</>
 	);
 }
