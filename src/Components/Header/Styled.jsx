@@ -6,3 +6,9 @@ export const TopBar = styled.div`
 	opacity: 1;
 	padding: 0.6rem 2rem;
 `;
+
+export const Container = styled.div`
+	background: url('img/header/search-background.png') no-repeat;
+	background-size: cover;
+	padding: 3rem 8rem;
+`;
