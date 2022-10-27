@@ -35,11 +35,14 @@ export default createGlobalStyle`
     border: 0;
     cursor: pointer;
   }
+  input {
+    border: 0;
+  }
 `;
 
 export const Container = styled.div`
-	padding: 0rem 3.75rem;
+	padding: 4rem 10rem;
 	@media (max-width: 450px) {
-		padding: 0rem 1rem;
+		padding: 4rem 10rem;
 	}
 `;
