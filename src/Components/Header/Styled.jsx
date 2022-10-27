@@ -7,8 +7,7 @@ export const TopBar = styled.div`
 	padding: 0.6rem 2rem;
 `;
 
-export const Container = styled.div`
+export const HeaderContainer = styled.div`
 	background: url('img/header/search-background.png') no-repeat;
 	background-size: cover;
-	padding: 3rem 8rem;
 `;
