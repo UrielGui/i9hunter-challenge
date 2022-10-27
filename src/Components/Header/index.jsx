@@ -1,5 +1,7 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 import * as Styled from './Styled';
+import {Container} from '../../Styles/Globals';
 
 export default function Header() {
 	return (
@@ -7,9 +9,12 @@ export default function Header() {
 			<Styled.TopBar>
 				<img src='img/logo.svg' alt='' />
 			</Styled.TopBar>
-			<Styled.Container>
-				<h1>Cont</h1>
-			</Styled.Container>
+
+			<Styled.HeaderContainer>
+				<Container>
+					<SearchBar />
+				</Container>
+			</Styled.HeaderContainer>
 		</header>
 	);
 }
