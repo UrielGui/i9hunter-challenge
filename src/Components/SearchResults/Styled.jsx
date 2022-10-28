@@ -18,11 +18,16 @@ export const Flex = styled.div`
 	}
 `;
 
-export const NewCardButton = styled.button`
+export const Button = styled.button`
 	background: #e76316;
 	color: #fff;
 	width: 173px;
 	height: 48px;
 	border-radius: 8px;
-	font-size: 17px;
+	font-size: 20px;
+`;
+
+export const FlexCenter = styled.div`
+	display: flex;
+	justify-content: center;
 `;
