@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Container} from '../../Styles/Globals';
 import * as Styled from './Styled';
 import {Data} from '../../Services/data';
@@ -6,7 +6,8 @@ import Cards from './Cards';
 import {Pokemon} from '../../GlobalStates/contexts';
 
 export default function SearchResults() {
-	const {pokemon, setPokemon} = useContext(Pokemon);
+	const {pokemon, setPokemon, offset, setOffset} = useContext(Pokemon);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		if (pokemon?.length === 0) {
@@ -14,14 +15,40 @@ export default function SearchResults() {
 		}
 	}, [pokemon, setPokemon]);
 
+	useEffect(() => {
+		Data(setPokemon, offset);
+		setLoading(false);
+	}, [offset, setPokemon]);
+
+	function loadMore() {
+		setLoading(true);
+		setOffset(pokemon.length);
+	}
+
+	function backSearch() {
+		Data(setPokemon);
+		setOffset(pokemon.length);
+	}
+
 	return (
 		<Styled.SearchResults>
 			<Container>
 				<Styled.Flex>
 					<Styled.Title>Resultado de busca</Styled.Title>
-					<Styled.NewCardButton>Novo Card</Styled.NewCardButton>
+					<Styled.Button type='button'>Novo Card</Styled.Button>
 				</Styled.Flex>
 				<Cards data={pokemon} />
+				<Styled.FlexCenter>
+					{pokemon.name ? (
+						<Styled.Button type='button' onClick={() => backSearch()}>
+							Voltar
+						</Styled.Button>
+					) : (
+						<Styled.Button disabled={loading} type='button' onClick={() => loadMore()}>
+							{loading ? 'Carregando...' : 'Carregar Mais'}
+						</Styled.Button>
+					)}
+				</Styled.FlexCenter>
 			</Container>
 		</Styled.SearchResults>
 	);
