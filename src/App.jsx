@@ -1,11 +1,12 @@
 import Header from './Components/Header';
+import SearchResults from './Components/SearchResults';
+import States from './GlobalStates/States';
 
-function App() {
+export default function App() {
 	return (
-		<div className='App'>
+		<States>
 			<Header />
-		</div>
+			<SearchResults />
+		</States>
 	);
 }
-
-export default App;
