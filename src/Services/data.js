@@ -1,14 +1,24 @@
 import axios from 'axios';
 
-export async function Data(setData) {
+export async function Data(setData, offset = 0) {
 	try {
 		let endpoints = [];
-		for (let i = 1; i < 9; i++) {
+		let initial = offset + 13;
+		for (let i = 1; i < initial; i++) {
 			endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
 		}
 		const response = await axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => res);
 		return setData(response);
 	} catch (error) {
-		return console.log(error);
+		return alert('Desculpe, mas os Pokémons estão indisponíveis no momento.');
+	}
+}
+
+export async function DataOnSearch(value, setData) {
+	try {
+		const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
+		return setData(response.data);
+	} catch (error) {
+		return alert('Desculpe, não conseguimos encontrar esse Pokémon.');
 	}
 }
