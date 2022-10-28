@@ -41,8 +41,8 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.div`
-	padding: 4rem 10rem;
+	padding: 0rem 10rem;
 	@media (max-width: 450px) {
-		padding: 4rem 10rem;
+		padding: 0rem 10rem;
 	}
 `;
