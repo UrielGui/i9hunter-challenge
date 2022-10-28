@@ -3,9 +3,10 @@ import {Pokemon} from './contexts';
 
 export default function States({children}) {
 	const [pokemon, setPokemon] = useState('');
+	const [offset, setOffset] = useState(0);
 	return (
 		<>
-			<Pokemon.Provider value={{pokemon, setPokemon}}>{children}</Pokemon.Provider>
+			<Pokemon.Provider value={{pokemon, setPokemon, offset, setOffset}}>{children}</Pokemon.Provider>
 		</>
 	);
 }
