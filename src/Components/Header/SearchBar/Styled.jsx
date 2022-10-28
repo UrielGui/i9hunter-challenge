@@ -20,7 +20,8 @@ export const IconBar = styled.span`
 	padding: 4px;
 	position: absolute;
 	box-sizing:border-box;
-	right: 11rem;
+	right: 11.7rem;
 	top: 8.7rem;
+	cursor: pointer;
 }
 `;
