@@ -19,6 +19,6 @@ export async function DataOnSearch(value, setData) {
 		const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
 		return setData(response.data);
 	} catch (error) {
-		return alert('Desculpe, não conseguimos encontrar esse Pokémon.');
+		return alert('Desculpe, mas eu não consegui encontrar esse Pokémon.');
 	}
 }
