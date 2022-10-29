@@ -3,10 +3,11 @@ import {Container} from '../../Styles/Globals';
 import * as Styled from './Styled';
 import {Data} from '../../Services/data';
 import Cards from './Cards';
-import {Pokemon} from '../../GlobalStates/contexts';
+import {Pokemon, Modal} from '../../GlobalStates/contexts';
 
 export default function SearchResults() {
 	const {pokemon, setPokemon, offset, setOffset} = useContext(Pokemon);
+	const {setShowNewCardModal} = useContext(Modal);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -35,7 +36,9 @@ export default function SearchResults() {
 			<Container>
 				<Styled.Flex>
 					<Styled.Title>Resultado de busca</Styled.Title>
-					<Styled.Button type='button'>Novo Card</Styled.Button>
+					<Styled.Button type='button' onClick={() => setShowNewCardModal(true)}>
+						Novo Card
+					</Styled.Button>
 				</Styled.Flex>
 				<Cards data={pokemon} />
 				<Styled.FlexCenter>
