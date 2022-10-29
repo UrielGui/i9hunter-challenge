@@ -14,13 +14,14 @@ export default createGlobalStyle`
     background: #ffffff;
   }
   ::-webkit-scrollbar-thumb {
-    background: #b10f84;
+    background: #c2c2c2;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #a01379;
+    background: #9d9d9d;
   }
   body {
     font-family: Open Sans, sans-serif;
+    background: #F6F4F6;
   }
   a {
     text-decoration: none;
