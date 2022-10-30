@@ -20,6 +20,11 @@ export const Container = styled.div`
 	width: 438px;
 	height: 434px;
 	background: #fff;
+
+	@media (max-width: 640px) {
+		width: 100%;
+		height: 100%;
+	}
 `;
 
 export const Cancel = styled.button`
@@ -35,6 +40,10 @@ export const Cancel = styled.button`
 	top: -217px;
 	left: 453px;
 	font-size: 16px;
+
+	@media (max-width: 640px) {
+		display: none;
+	}
 `;
 
 export const Picture = styled.div`

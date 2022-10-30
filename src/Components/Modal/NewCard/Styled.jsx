@@ -47,7 +47,7 @@ export const NewCard = styled.div`
 	@media (max-width: 945px) {
 		width: 40%;
 	}
-	@media (max-width: 705px) {
+	@media (max-width: 768px) {
 		width: 100%;
 	}
 `;
@@ -57,6 +57,12 @@ export const CloseNewCard = styled.button`
 	position: absolute;
 	background: transparent;
 	padding: 15px;
+
+	@media (max-width: 768px) {
+		position: absolute;
+		right: 0;
+		z-index: 5;
+	}
 `;
 
 export const Title = styled.div`
@@ -100,6 +106,10 @@ export const FileInput = styled.input`
 	margin-top: 15px;
 	height: 75px;
 
+	@media (max-width: 1280px) {
+		color: transparent;
+	}
+
 	::file-selector-button {
 		cursor: pointer;
 		color: #e76316;
@@ -112,6 +122,14 @@ export const FileInput = styled.input`
 		float: right;
 		position: relative;
 		top: -15px;
+		@media (max-width: 1280px) {
+			float: none;
+		}
+		@media (max-width: 310px) {
+			width: 117px;
+			height: 28px;
+			font-size: 0.8rem;
+		}
 	}
 `;
 

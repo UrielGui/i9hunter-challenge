@@ -5,6 +5,9 @@ export const Container = styled.div`
 	flex-wrap: wrap;
 	margin-top: 40px;
 	justify-content: space-between;
+	@media (max-width: 640px) {
+		justify-content: center;
+	}
 `;
 
 export const Card = styled.div`
@@ -12,12 +15,16 @@ export const Card = styled.div`
 	height: 280px;
 	margin-bottom: 40px;
 	text-align: -webkit-center;
-	background: var(---cor-branco) 0% 0% no-repeat padding-box;
 	background: #ffffff 0% 0% no-repeat padding-box;
 	box-shadow: 0px 3px 6px #e5e5e5;
 	border: 1px solid #e4e4e4;
 	border-radius: 8px;
 	opacity: 1;
+
+	@media (max-width: 640px) {
+		width: 80%;
+		justify-content: center;
+	}
 `;
 
 export const Picture = styled.div`

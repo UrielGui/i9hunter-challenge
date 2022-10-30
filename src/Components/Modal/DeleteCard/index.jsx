@@ -24,7 +24,9 @@ export default function DeleteCard() {
 
 	return (
 		<Styled.FullScreen show={showRemoveModal} onKeyUp={() => alert('oLá')}>
-			<Styled.Cancel onClick={() => closeModal()}>X</Styled.Cancel>
+			<Styled.Cancel type='button' onClick={() => closeModal()}>
+				X
+			</Styled.Cancel>
 			<Styled.Container>
 				<Styled.Picture>
 					<img src='img/icons/trash-modal.svg' alt='Excluir' />

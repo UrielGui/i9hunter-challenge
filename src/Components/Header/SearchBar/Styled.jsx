@@ -10,6 +10,20 @@ export const SearchBar = styled.input`
 	::-webkit-input-placeholder {
 		opacity: 0.7;
 	}
+
+	@media (max-width: 768px) {
+		padding: 0 1rem;
+	}
+
+	@media (max-width: 640px) {
+		font-size: 1.2rem;
+		height: 4.5rem;
+	}
+
+	@media (max-width: 310px) {
+		font-size: 1rem;
+		height: 4rem;
+	}
 `;
 
 export const IconBar = styled.span`
@@ -23,5 +37,21 @@ export const IconBar = styled.span`
 	right: 12rem;
 	top: 12.6rem;
 	cursor: pointer;
+
+	@media (max-width: 1024px) {
+		right: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		width: 2rem;
+		height: 2rem;
+		top: 12.5rem;
+	}
+
+	@media (max-width: 310px) {
+		width: 1.3rem;
+		height: 1.3rem;
+		top: 12.7rem;
+	}
 }
 `;

@@ -7,14 +7,18 @@ export const SearchResults = styled.div`
 export const Title = styled.h1`
 	color: #5f1478;
 	flex-grow: 2;
+	@media (max-width: 640px) {
+		margin-top: 20px;
+	}
 `;
 
 export const Flex = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	@media (max-width: 450px) {
-		flex-direction: column;
+	@media (max-width: 640px) {
+		flex-direction: column-reverse;
 		padding-bottom: 5px;
+		align-content: center;
 	}
 `;
 
@@ -25,6 +29,10 @@ export const Button = styled.button`
 	height: 48px;
 	border-radius: 8px;
 	font-size: 20px;
+
+	@media (max-width: 640px) {
+		align-self: center;
+	}
 `;
 
 export const FlexCenter = styled.div`
