@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import * as Styled from './Styled';
+import {Modal} from '../../../GlobalStates/contexts';
 
 export default function Cards({data}) {
+	const {setShowRemoveModal, setShowNewCardModal, setEditCard} = useContext(Modal);
+
+	function openEditCard(name) {
+		setShowNewCardModal(true);
+		setEditCard(name);
+	}
 	return (
 		<Styled.Container>
 			{data.name ? (
@@ -12,10 +19,10 @@ export default function Cards({data}) {
 					<Styled.Divider />
 					<Styled.Title>{data.name}</Styled.Title>
 					<Styled.Options>
-						<Styled.Button mright type='button'>
+						<Styled.Button mright type='button' onClick={() => setShowRemoveModal(true)}>
 							<Styled.Icon src='img/icons/trash.svg' alt='Excluir' /> Excluir
 						</Styled.Button>
-						<Styled.Button type='button'>
+						<Styled.Button type='button' onClick={() => openEditCard(data.name)}>
 							<Styled.Icon src='img/icons/edit.svg' alt='Editar' /> Editar
 						</Styled.Button>
 					</Styled.Options>
@@ -31,10 +38,10 @@ export default function Cards({data}) {
 							<Styled.Divider />
 							<Styled.Title>{item.data.name}</Styled.Title>
 							<Styled.Options>
-								<Styled.Button mright type='button'>
+								<Styled.Button mright type='button' onClick={() => setShowRemoveModal(true)}>
 									<Styled.Icon src='img/icons/trash.svg' alt='Excluir' /> Excluir
 								</Styled.Button>
-								<Styled.Button type='button'>
+								<Styled.Button type='button' onClick={() => openEditCard(item.data.name)}>
 									<Styled.Icon src='img/icons/edit.svg' alt='Editar' /> Editar
 								</Styled.Button>
 							</Styled.Options>
