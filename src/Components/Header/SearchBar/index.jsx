@@ -5,11 +5,21 @@ import {Pokemon} from '../../../GlobalStates/contexts';
 
 export default function SearchBar() {
 	const {setPokemon} = useContext(Pokemon);
-	const [value, setValue] = useState('');
+	const [value, setValue] = useState(null);
 
 	const onSubmit = useCallback(() => {
-		DataOnSearch(value, setPokemon);
+		if (document.querySelector('#search').value.length === 0 || value.trim().length === 0) {
+			alert('Você precisa digitar um nome para pesquisar.');
+		} else {
+			DataOnSearch(value.toLowerCase().trim(), setPokemon);
+		}
 	}, [setPokemon, value]);
+
+	useEffect(() => {
+		if (document.querySelector('#search').value.length === 0) {
+			setValue(null);
+		}
+	}, [value]);
 
 	useEffect(() => {
 		const keyDownHandler = (event) => {
@@ -29,6 +39,7 @@ export default function SearchBar() {
 			<Styled.IconBar onClick={() => onSubmit()} />
 			<Styled.SearchBar
 				name='search'
+				id='search'
 				onChange={(e) => setValue(e.target.value)}
 				placeholder='Digite aqui a sua busca...'
 			/>
