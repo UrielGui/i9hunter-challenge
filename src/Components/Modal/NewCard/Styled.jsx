@@ -98,6 +98,7 @@ export const FileInput = styled.input`
 	padding: 25px;
 	font-size: 18px;
 	margin-top: 15px;
+	height: 75px;
 
 	::file-selector-button {
 		cursor: pointer;
@@ -108,7 +109,9 @@ export const FileInput = styled.input`
 		border: 1px solid #e76316;
 		border-radius: 8px;
 		background: #fff;
-		clear: both;
+		float: right;
+		position: relative;
+		top: -15px;
 	}
 `;
 
