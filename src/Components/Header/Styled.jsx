@@ -10,6 +10,6 @@ export const TopBar = styled.div`
 export const HeaderContainer = styled.div`
 	background: url('img/header/search-background.png') no-repeat;
 	background-size: cover;
-	padding-top: 4rem;
+	padding-top: 8rem;
 	padding-bottom: 4rem;
 `;
