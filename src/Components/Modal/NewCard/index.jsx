@@ -6,9 +6,11 @@ export default function NewCard() {
 	const {showNewCardModal, setShowNewCardModal, editCard, setEditCard} = useContext(Modal);
 	const [startAnimation, setStartAnimation] = useState(100);
 	const [endAnimation, setEndAnimation] = useState(0);
+	const [showModal, setShowModal] = useState(false);
 
 	useEffect(() => {
 		if (showNewCardModal) {
+			setShowModal(true);
 			setStartAnimation(100);
 			setEndAnimation(0);
 		} else {
@@ -34,7 +36,7 @@ export default function NewCard() {
 	}, [setShowNewCardModal]);
 
 	return (
-		<Styled.FullScreen show={showNewCardModal} newCardWidth1={startAnimation} newCardWidth2={endAnimation}>
+		<Styled.FullScreen show={showModal} newCardWidth1={startAnimation} newCardWidth2={endAnimation}>
 			<Styled.CloseNewCard type='button' onClick={() => setShowNewCardModal(false)}>
 				X
 			</Styled.CloseNewCard>
@@ -49,7 +51,7 @@ export default function NewCard() {
 				<Styled.InputTitle>Inclua uma imagem para aparecer no card</Styled.InputTitle>
 				<Styled.FileInput placeholder='Selecionar arquivo' type='file' name='file' />
 				<Styled.Divider />
-				<Styled.Button type='button' onClick={() => alert('Funcionalidade ainda não implementada!')}>
+				<Styled.Button type='submit' onClick={() => alert('Funcionalidade ainda não implementada!')}>
 					{editCard ? 'Editar Card' : 'Criar Card'}
 				</Styled.Button>
 			</Styled.NewCard>
