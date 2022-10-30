@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext, useEffect, useCallback} from 'react';
 import * as Styled from './Styled';
 import {Modal} from '../../../GlobalStates/contexts';
 
@@ -22,22 +22,32 @@ export default function NewCard() {
 		}
 	}, [editCard, setEditCard, showNewCardModal]);
 
+	const closeModal = useCallback(() => {
+		setShowNewCardModal(false);
+		document.getElementById('form').reset();
+	}, [setShowNewCardModal]);
+
 	useEffect(() => {
 		const keyDownHandler = (event) => {
 			if (event.key === 'Escape' || event.key === 'Esc') {
 				event.preventDefault();
-				setShowNewCardModal(false);
+				closeModal();
 			}
 		};
 		document.addEventListener('keydown', keyDownHandler);
 		return () => {
 			document.removeEventListener('keydown', keyDownHandler);
 		};
-	}, [setShowNewCardModal]);
+	}, [closeModal, setShowNewCardModal]);
+
+	function onSubmit(e) {
+		e.preventDefault();
+		alert('Funcionalidade ainda não implementada!');
+	}
 
 	return (
 		<Styled.FullScreen show={showModal} newCardWidth1={startAnimation} newCardWidth2={endAnimation}>
-			<Styled.CloseNewCard type='button' onClick={() => setShowNewCardModal(false)}>
+			<Styled.CloseNewCard type='button' onClick={() => closeModal()}>
 				X
 			</Styled.CloseNewCard>
 			<Styled.NewCard>
@@ -46,14 +56,14 @@ export default function NewCard() {
 					<h1>{editCard ? 'Editar Card' : 'Criar Card'}</h1>
 				</Styled.Title>
 				<Styled.Divider />
-				<Styled.InputTitle>Digite um nome para o card</Styled.InputTitle>
-				<Styled.Input name='title' placeholder='Digite o título' defaultValue={editCard} />
-				<Styled.InputTitle>Inclua uma imagem para aparecer no card</Styled.InputTitle>
-				<Styled.FileInput placeholder='Selecionar arquivo' type='file' name='file' />
-				<Styled.Divider />
-				<Styled.Button type='submit' onClick={() => alert('Funcionalidade ainda não implementada!')}>
-					{editCard ? 'Editar Card' : 'Criar Card'}
-				</Styled.Button>
+				<form id='form' onSubmit={onSubmit}>
+					<Styled.InputTitle>Digite um nome para o card</Styled.InputTitle>
+					<Styled.Input name='title' id='title' placeholder='Digite o título' defaultValue={editCard} />
+					<Styled.InputTitle>Inclua uma imagem para aparecer no card</Styled.InputTitle>
+					<Styled.FileInput placeholder='Selecionar arquivo' type='file' name='file' />
+					<Styled.Divider />
+					<Styled.Button type='submit'>{editCard ? 'Editar Card' : 'Criar Card'}</Styled.Button>
+				</form>
 			</Styled.NewCard>
 		</Styled.FullScreen>
 	);
