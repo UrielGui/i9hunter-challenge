@@ -39,10 +39,10 @@ export default function Cards({data}) {
 							<Styled.Title>{item.data.name}</Styled.Title>
 							<Styled.Options>
 								<Styled.Button mright type='button' onClick={() => setShowRemoveModal(true)}>
-									<Styled.Icon src='img/icons/trash.svg' alt='Excluir' /> Excluir
+									<Styled.Icon src='img/icons/trash.svg' alt='Excluir' /> <span>Excluir</span>
 								</Styled.Button>
 								<Styled.Button type='button' onClick={() => openEditCard(item.data.name)}>
-									<Styled.Icon src='img/icons/edit.svg' alt='Editar' /> Editar
+									<Styled.Icon src='img/icons/edit.svg' alt='Editar' /> <span>Editar</span>
 								</Styled.Button>
 							</Styled.Options>
 						</Styled.Card>

@@ -58,6 +58,10 @@ export const Button = styled.button`
 	color: #263238;
 	opacity: 0.7;
 	background: transparent;
+
+	span:hover {
+		color: red;
+	}
 `;
 
 export const Icon = styled.img`
