@@ -36,4 +36,4 @@ Open http://localhost:3000 to view it in the browser.
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](https://github.com/UrielGui/best-cakes-shop/blob/master/LICENSE) for more information.
+This project is under the MIT license. See the [LICENSE](https://github.com/UrielGui/i9hunter-challenge/blob/master/LICENSE) for more information.
