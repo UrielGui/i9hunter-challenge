@@ -9,7 +9,7 @@ This project was developed with the following technologies:
 
 - [React JS](https://reactjs.org/)
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
-- [Axios](https://www.npmjs.com/package/axios/)
+- [Axios](https://axios-http.com/ptbr/)
 - [Styled-Components](https://styled-components.com/)
 - [PokéAPI](https://pokeapi.co/)
 
