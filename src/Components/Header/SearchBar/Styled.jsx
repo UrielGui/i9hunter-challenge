@@ -40,12 +40,17 @@ export const IconBar = styled.span`
 
 	@media (max-width: 1024px) {
 		right: 2rem;
+		top: 12.3rem;
 	}
 
 	@media (max-width: 768px) {
 		width: 2rem;
 		height: 2rem;
-		top: 12.5rem;
+		top: 13rem;
+	}
+
+	@media (max-width: 640px) {
+		top: 12.6rem;
 	}
 
 	@media (max-width: 310px) {
